@@ -1,0 +1,13 @@
+Functions:-
+-----------------
+
+   -> A function is a block of code that performs a specific task.
+   -> Function makes the code reusable.
+   -> You can declare it once and use it multiple times.
+   -> makes the program easier as each small task is divided into a function
+    ->function increases readability
+   -> DRY--> dont repeat yourself
+
+
+   function name(parameterIfAny){.....}
+   

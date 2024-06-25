@@ -1,0 +1,53 @@
+Objects:-
+--------------------
+    {key : value}
+
+const person={
+    key : value
+}
+
+const p={
+    firstName : "HuXn",
+    lastName : "WebDev",
+    age:19,
+    location:["planet","earth"],
+    isProgrammer:true
+};
+console.log(p);
+console.log(typeof p);//object
+console.log(p.firstName);
+console.log(p.lastName);
+console.log(p.location[0]);
+console.log(p.location[1]);
+console.log(p.isProgrammer);
+
+console.log("Hi");
+console.log(p['location']);
+console.log(p['lastName']);
+console.log(p['firstName']);
+console.log(p['age']);
+
+
+const p={
+    10:'ten'
+}
+
+log(p.10);//error
+console.log(p['10']);//correct
+
+
+we need to add key in object:-
+---------------------------------
+
+const p={
+    firstName:"sree";
+}
+p.lastName="vishnu";
+p.location=["planet","earth"]
+
+
+Delete from object:-
+-------------------------
+
+    delete p.firstName;
+    
