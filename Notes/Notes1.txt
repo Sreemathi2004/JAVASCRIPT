@@ -1,0 +1,24 @@
+What is javascript?
+-------------------
+
+    Javascript  is a versatile and widely used programming language that plays a crucial role in web development .
+
+    It enables developers to create interactive and dynamic elements within web pages , enhancing the users experience by adding functionality that responds to user actions.
+
+    Javascript is primarily executed in web browers , but its also used in other environment like server-side scripting(Node.js)
+
+VARIABLE:-
+-----------
+
+    Syntax:-
+        reserved_keyword variableName =value;
+
+    let reserved_keyword
+    var reserved_keyword
+    const reserved_keyword
+
+    Declared Variable:-
+    ------------------
+        let name;
+    
+    
