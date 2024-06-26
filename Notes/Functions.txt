@@ -10,4 +10,104 @@ Functions:-
 
 
    function name(parameterIfAny){.....}
-   
+
+-----------------------------------------------
+function greeting(){
+    console.log("hello from function");
+}
+greeting();
+
+------------------------------------------------
+function sayHello(name){
+    console.log(`Hello ${name}`);
+}
+
+sayHello("Sreemathi")
+
+---------------------------------------------
+
+function add(x,y){
+    return x+y;
+}
+let value=add(5,6);
+console.log(value);
+
+-------------------------------------------
+
+Difference between function declaration and expression
+
+function declaration
+-----------------------
+        function sayHello(){
+            log("hello);
+        }
+
+function expression:-
+------------------------
+   const greeting= function(user){
+            log(`Hello ${user});
+        }
+
+
+    const a=()=>{
+    console.log("Hello");
+    }
+    a();
+
+    const b=(name)=>{
+    console.log(`Hello ${name}`);
+    }
+    b("Sreemathi");
+
+
+    CALL BACK FUNCTION:-
+---------------------------------
+when we provide function as an (argument) to
+other function that function is known as callback
+function
+
+function func(value){
+    console.log(value*2);
+}
+
+function result(func){
+    func(34);
+}
+result(func);
+
+
+--------------
+function greet(name,cb){
+    console.log(`Hello ${name}`);
+    cb()
+}
+function cb(){
+    console.log("Iam in cb");
+}
+greet("Rakesh",cb);
+----------------
+function showCalFunc(fn){
+    let c=10;
+    fn(c);
+}
+function fn(value){
+    console.log(`Value is ${value} from show call`);
+}
+
+showCalFunc(fn);
+----------------------------------------------------------------------
+
+SCOPE IN JAVASCRIPT
+--------------------
+
+    scope in js refers to the current context of code ,which determines
+    the accessibility of variables to js
+
+    2 types
+    --------
+
+        gLobal scope :- 
+            those declared outside of a block
+        Local scope:-
+            those declared inside of a block
+            

@@ -1,0 +1,112 @@
+new Date() -->date constructor
+
+const currentDate=new Date();
+console.log(currentDate);
+
+------------------------
+//year.month,day,hours,minutes,seconds,milliseconds
+const currentDate1=new Date(2024,2,24,12,30,0,0);
+console.log(currentDate1);
+
+const year=date.getFullYear();
+const month=date.getMonth();
+const day=date.getDay();
+const hours=date.getHours();
+const minutes=date.getMinutes();
+const milliseconds =date.getMilliseconds();
+
+console.log(year);
+console.log(month);
+console.log(day);
+console.log(hours);
+console.log(minutes);
+console.log(milliseconds);
+
+
+//date to string
+
+console.log(date.toDateString());
+console.log(date.toISOString());
+console.log(date.toLocaleDateString());
+
+//add one day
+
+date.setDate(date.getDate()+1);
+console.log(date);
+
+date.setDate(date.getDate()-1);
+console.log(date);
+----------------------------
+setIntervals:-
+--------------
+ setInterval(
+    ()=>console.log(`This function will be executed every 2 seconds`),2000
+);
+
+setTimeOut:-
+----------------
+ executed after a specified delay
+
+setTimeout(
+    ()=>console.log(`hI`),3000
+);
+
+clearInterval():_
+--------------------
+    stop the interval
+
+//clear interval
+const intervalId=setInterval(
+    ()=>console.log('This is setInterval'),2000
+)
+setTimeout(
+    ()=>{
+        clearInterval(intervalId)
+        console.log('Stopped');
+    }
+    ,4000
+)
+
+----------------------------------------------------------------------
+        TEMPLATE STRINGS
+        ----------------
+
+Template strings also known as template literals are a feature in js that allows you to create strings with embedded expressions.
+
+they are denoted by backticks `` instead of single or double quotes.
+
+template string provide a more flexible and concise way to construct strings , especially when they involve variables or expressions.
+
+let fn="sree";
+let ln="mathi";
+console.log(`My name is ${fn.concat(ln)}`);
+
+-------------------------------------------------------------------------
+    ARROW FUNCTIONS
+    -----------------
+
+also known as fat arrow FUNCTIONS
+are a concise and shorter way to define functions in js
+They were introduced in ECMAScript 6 ES6 and provide a more compact syntax compared to traditional function expressions
+
+ gs=username=>`Hello ${username}`;
+console.log(gs("Vishnu"));
+
+
+//Expression 
+-------------
+const  gs=username=>`Hello ${username}`;
+console.log(gs("Kavitha"));
+
+
+//Normal function
+
+function double(number){
+    return number*2;
+}
+console.log(double(4));
+
+//normal convert to arrow
+
+double1=number=>number*2;
+console.log(double1(5));
