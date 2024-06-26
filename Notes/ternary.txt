@@ -1,0 +1,34 @@
+The ternary operator in js is a consicse way of eriting conditional expressions.
+
+iT IS THE ONLY JAVASCRIPT OPERATOR THAT TAKES 3 OPERANDS : 
+    condition ? true:false
+
+
+let password=2;
+function passwordChecker(ps){
+    if(ps===8){
+        return 'Strong password';
+    }
+    else{
+        return 'Password should be 8 characters';
+    }
+}
+const res=passwordChecker(password);
+console.log(res);
+
+------------
+
+let password=2;
+function passwordChecker(ps){
+
+    return (ps===8)?'Strong password':'Password should be 8 characters';
+}
+const res=passwordChecker(password);
+console.log(res);
+------------
+//ASSIGNMENET
+
+let money=false;
+money===true?console.log("Buy products"):console.log("They should bring money");
+
+-----------

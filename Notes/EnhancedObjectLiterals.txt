@@ -1,0 +1,46 @@
+Introducted in ECMAScript6 are a set of enhancements to the syntax for defining objects in js .
+
+These enhancements makes it more convenient and concise to define object properties and methods
+
+function user(name,age,work){
+    return{
+        name:name,
+        age:age,
+        work:work
+    };
+}
+
+const huxn=user("Huxn",29,"programmer");
+console.log(huxn);
+
+--------------------------------
+function user(name,age,work){
+    return{
+        name,
+        age,
+        work
+    };
+}
+
+const huxn=user("Huxn",29,"programmer");
+console.log(huxn);
+----------------------------------
+function user(name,age,work){
+    return{
+        name,
+        age,
+        work,
+        intro:()=>
+            console.log(
+                `My name is ${user.name}`
+            )
+        }
+    };
+
+
+const huxn=user("Huxn",29,"programmer");
+console.log(huxn);
+console.log(huxn.intro());
+
+if you wwish to insert function in enhanced literals then we can use "intro:"
+-----------------------------------------

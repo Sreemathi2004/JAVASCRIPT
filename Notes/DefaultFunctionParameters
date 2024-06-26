@@ -1,0 +1,29 @@
+Default function parameters introduced in ECMAScript 6, allow you to assign default values to function parameters. when a function is called and an argument is not provided for a parameter, the default value will be used instead.this feature makes it easier to handle cases where arugments might be missing or undefined.
+
+function countTo5(count=false){
+    if(count===true){
+        for(let i=1;i<=5;i++){
+            console.log(`Count : ${i}`);
+        }
+    }
+}
+countTo5(true);
+
+------------------------------------------------
+function ratings(rate=5){
+    if(rate===5){
+        console.log(`high ratings :)`);
+    }
+    else if(rate ===0){
+        console.log('low ratings :(');
+    }
+}
+ratings(0);
+----------------------------------------------------
+//Assignment
+function multiply2(a,b=1){
+    console.log(a*b);
+}
+multiply2(4,3);
+----------------------------------------------------
+

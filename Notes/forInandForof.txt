@@ -1,0 +1,95 @@
+the for ..in loop in js is used to iterate over the enumerable properties of an object.it is a way to loop through the keys of an object
+
+for(let key in object){
+    -------
+
+}
+
+
+let persons={
+    name:"huxn",
+    age:19,
+    gender:"male"
+}
+
+for(let keys in persons){
+    console.log(keys,persons[keys]);
+}
+
+----------------------
+for(let keys in persons){
+    console.log(`${keys} : ${persons[keys]}`);
+}
+
+---------------------
+
+//assignemnt
+
+const object={
+    a:1,
+    b:2,
+    c:3
+};
+
+for(let keys in object){
+    console.log(`${keys} : ${object[keys]}`);
+}
+
+-------------------------
+---------XXX-for of loop -XXX----------
+the for of loop in js is a modern iteration statement introduced in ECMAScript 6 (ES6) that provides a concise and easy way to loop over elements in iterable objects like arrays,strings,maps,sets and more .
+
+It allows you to iterate directly over the values of the elements rather that dealing with their indeices or keys , which makes the code more readable and less error-prone
+
+for(variable of iterable){....}
+
+
+//forof loop
+
+let p1=["huxn","sree","kavitha"];
+for(let people of p1){
+    console.log(people);
+}
+
+const text="Hello";
+for(const char of text){
+    console.log(char);
+}
+
+-------
+assignemnt
+
+
+const array1=["a","b","c"];
+for(const array of array1){
+    console.log(array);
+}
+
+-----------------------------------------------
+        FOR EACH METHOD
+
+when we call the forEach helper we pass in anonymous callback function
+
+this function gets called one time for every elements in the array
+
+whatever is inside the function that logic happens
+------------
+const col=["teal","blue","red","green"];
+col.forEach((c)=>console.log(c));
+
+const word=["hello","bird","table","football","pipe","code"];
+
+const capWord=word.forEach((word,index,array)=>{
+    array[index]=word[0].toUpperCase()+word.substring(1);
+})
+
+console.log(word);
+
+---------------
+//assignment
+const number=[1,2,3,4,5,6,7,8,9,10];
+let sum=0;
+number.forEach((value)=>sum=sum+value);
+console.log(`Sum is ${sum}`);
+
+-------------------
