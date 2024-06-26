@@ -1,0 +1,10 @@
+{
+    "name":"sreemathi",
+    "age":20,
+    "email":"sreemathik.m2004@gmail.com",
+    "isSubscribed":true,
+    "hobbies":["reading","running","cooking"],
+    "address":{
+        "city":"coimbatore"
+    }
+}
