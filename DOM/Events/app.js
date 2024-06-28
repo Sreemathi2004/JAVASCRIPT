@@ -8,3 +8,15 @@ const best=document.querySelector(".best");
 best.addEventListener("click",()=>console.log("hi hello"));
 
 // ----------- Event (e) Object -----------
+
+const para=document.querySelector("p");
+para.addEventListener('click',(event)=>console.log(event));
+
+
+// ---------------form---------------------
+
+const form =document.querySelector("form");
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    console.log(event);
+});
