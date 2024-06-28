@@ -1,0 +1,10 @@
+//---------------PROJECT1---------------
+
+// windows+dot => get emoji
+
+btn.addEventListener("mouseover", () => {
+  btn.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+});
+
+
+//
