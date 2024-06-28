@@ -7,4 +7,90 @@ btn.addEventListener("mouseover", () => {
 });
 
 
-//
+//---------------PROJECT 2------------------
+
+btn.forEach ((btn)=>{  btn.addEventListener("click",()=>
+    {
+        color=btn.value;
+        changeColorBack(color);
+    });}
+);
+function changeColorBack(color){
+    body.className="";
+    switch(color){
+        case "purple":
+            body.classList.add("purple");
+            break;
+        case "blue":
+            body.classList.add("blue");
+            break;
+        case "red":
+            body.classList.add("red");
+            break;
+        case "green":
+            body.classList.add("green");
+            break;
+        case "yellow":
+            body.classList.add("yellow");
+            break;
+        case "teal":
+            body.classList.add("teal");
+            break;
+
+    }
+}
+
+-----------PROJECT 3-------------------
+
+const ratings=document.querySelectorAll("ratings");
+const ratingContainer=document.querySelector(".ratings-container");
+const sendBtn=document.querySelector("#send");
+const panel=document.querySelector("#panel");
+
+let selectedRating="Satisfied";
+
+ratingContainer.addEventListener("click",(e)=>{
+    if(e.target.parentNode.classList.contains("rating")){
+        removeActive();
+        e.target.parentNode.classList.add("active");
+        selectedRating=e.target.nextElementSibling.innerHTML;
+    }
+});
+
+sendBtn.addEventListener("click",()=>{
+    panel.innerHTML=`<p class="heart">❤️</p>
+    <strong> Thank You </strong>
+    <br>
+    <strong> FeedBack : ${selectedRating} </strong>`
+});
+
+function removeActive(){
+    for(let i=0;i<ratings.length;i++){
+        ratings[i].classList.remove('active');
+    }
+}
+
+-------PROJECT 4----------------------
+
+const insert = document.getElementById("insert");
+
+window.addEventListener("keydown", (event) => {
+  // if its ' ' then put out Space or else put out whatever key is
+  insert.innerHTML = `
+  <div class="key">
+  ${event.key === " " ? "Space" : event.key} 
+  <small>event.key</small>
+</div>
+
+  <div class="key">
+    ${event.keyCode}
+    <small>event.keyCode</small>
+  </div>
+
+  <div class="key">
+    ${event.code}
+    <small>event.code</small>
+  </div>
+  `;
+});
+
