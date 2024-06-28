@@ -1,0 +1,20 @@
+What is an Event?
+
+Javascript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page.
+
+
+ <!-- Bad way 1 (inline) -->
+    <button onclick="alert('hey')">Click Me</button>
+
+
+// ----------- BAD WAY-----------
+const secondBtn = document.querySelector(".second-btn");
+secondBtn.onclick=()=>console.log("SreeVishnu");
+secondBtn.onmousemove=()=>alert("Hello");
+
+
+// ----------- GREAT WAY-----------
+
+const best=document.querySelector(".best");
+best.addEventListener("click",()=>console.log("hi hello"));
+
