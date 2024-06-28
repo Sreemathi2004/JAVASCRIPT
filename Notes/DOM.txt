@@ -1,0 +1,229 @@
+
+document Object Model
+
+when a web page is loaded the browser creates a document object model of the page.
+
+console.dir(document);
+console.log(document.head);
+console.log(document.body);
+console.log(document.title);
+console.log(window);
+console.log(document.documentURI);
+
+-------------------------------------------------------
+innerText,innerContent,innerHTML
+-------------------------------
+// innerText
+// textContent
+// innerHTML
+
+const p=document.querySelector("p");
+console.log(p.innerText);//of the text but totally formatted 
+console.log(p.textContent);//it will give pure content
+console.log(p.innerHTML);//it includes everythin like tag ,etc
+
+const h1=document.querySelector("h1");
+h1.innerText="text changed";
+h1.innerHTML="<em><del>SreemathiVishnu</del></em>"
+
+//ASSIGNMENT
+// 1. Check the innerText of "first" element
+// 2. Check the textContent of "second" element
+// 3. Check the innerHTML of "third" element
+
+const first=document.querySelector(".first");
+console.log(first.innerText);
+
+const second=document.querySelector(".second");
+console.log(second.textContent);
+
+const third=document.querySelector(".third");
+console.log(third.innerHTML);
+
+---------------------------------------------------------
+LESSON:4 CLASSLIST
+-------------------
+// classlist
+// add()
+// remove()
+// toggle()
+
+const h1=document.querySelector("h1");
+console.log(h1.classList);
+
+//add()
+
+const h1=document.querySelector("h1");
+h1.classList.add("styles");
+console.log(h1.classList);
+
+//remove()
+
+const h1=document.querySelector("h1");
+h1.classList.remove("styles");
+console.log(h1.classList);
+
+// toggle() --> suppose if there is
+ class it will remove .if there is no class it will add it.
+
+const h1=document.querySelector("h1");
+h1.classList.toggle("apple");
+//<h1 class="styles apple">Hello World</h1>
+h1.classList.toggle("styles");
+//<h1 class="apple">Hello World</h1>
+-------------------------------------------------------------------------
+    LESSON 5 GETTING AND SETTING ATTRIBUTES
+
+// href
+// value
+// type
+// getAttribute(attrName)
+// setAttribute(attrName, value)
+
+//href
+
+const  a=document.querySelector("a");
+console.log(a.href);
+
+const  a=document.querySelector("a");
+console.log(a.href="www.youtube.com");
+
+//value
+
+<input type="text" value="Hello" />
+const input=document.querySelector("input");
+console.log(input.value);
+
+//type
+console.log(input.type);//text
+console.log(input.type="password");//password
+
+//getter and setter
+
+a.href="https://www.youtube.com/@huxnwebdev";
+console.log(input.text="password");
+console.log(input.placeholder="pls provide srg pass");
+
+//getattributes(arrtName)
+console.log(input.getAttribute("type"));
+console.log(input.getAttribute("placeholder"));
+
+//setAttribute
+console.log(input.setAttribute("placeholder","Email"));
+console.log(input.setAttribute("type","text"));
+console.log(input.type);
+
+-----------------------------------------------
+            SIBLIngs
+
+            PARENT
+const li=document.querySelector("li");
+console.log(li);
+console.log(li.parentElement);//ul
+console.log(li.parentElement.parentElement);//body
+console.log(li.parentElement.parentElement.parentElement)//html 
+
+
+            CHILDREN
+let ul=document.querySelector("ul");
+console.log(ul.children);
+console.log(ul.children[0]);
+console.log(ul.children[1]);
+console.log(ul.children.length);
+ul.children[0].innerText="Hello"
+console.log(ul.children[0].innerText);
+
+console.log(li.nextElementSibling);//give second li
+
+console.log(li.nextElementSibling.nextElementSibling);
+
+console.log(li.nextElementSibling.nextElementSibling.innerText);
+
+//PREVIOUS CHILDREN
+console.log("Hello");
+let fourthLi=document.querySelector(".fourth");
+console.log(fourthLi.previousElementSibling.previousElementSibling.innerText);
+console.log(fourthLi.previousElementSibling.innerText);
+;
+
+-----------------------------------------------
+            styles
+
+const h1=document.querySelector("h1");
+h1.style.backgroundColor="red";
+h1.style.color="black";
+h1.style.fontFamily="sans-serif";
+h1.style.border="2px black solid";
+h1.style.width="50%";
+
+-----------------------------------------------
+
+    CREATEELEMENT , APPEND , PREPEND , INSERTADJECT,REMOVECHILD,REMOVECHILD
+
+//CREATING ELEMENTS AND APPENDING IT TO THE DOM 
+
+//createElement()
+
+const h1=document.createElement("h1");
+h1.textContent="hello world";
+h1.classList.add("greetings");
+console.log(h1);
+
+//append()
+
+const h1=document.createElement("h1");
+h1.textContent="hello world";
+h1.classList.add("greetings");
+console.log(h1);
+const body=document.body;
+body.appendChild(h1);//append the body in last
+
+//append() list 
+
+const ul=document.querySelector("ul");
+const li=document.createElement("li");
+li.textContent=5;
+ul.appendChild(li);
+
+//selector.insertBefore(what,where)
+
+const ul=document.querySelector("ul");
+const li=document.createElement("li");
+li.textContent=5;
+ul.appendChild(li);
+const h2=document.createElement("h1");
+h2.textContent="Hello chellakutty";
+const p=document.querySelector("p");
+body.insertBefore(h2,p);
+
+//insertAdjacentElement(where,what);
+
+const p=document.querySelector("p");
+const i=document.createElement("i");
+i.innerText="Iam italics";
+i.style.color="red";
+p.insertAdjacentElement("beforebegin",i);
+p.insertAdjacentElement("beforeend",i);
+p.insertAdjacentElement("afterbegin",i);
+p.insertAdjacentElement("afterend",i);
+
+//append and prepend
+
+let section =document.querySelector("section");
+const p1=document.createElement("p");
+p1.innerText="hi this is frontend developer";
+const span=document.createElement("span");
+span.textContent="Vishnu";
+section.append(p1,span);
+section.prepend(p1,span);
+
+//remove
+
+const news=document.querySelector(".new-list");
+news.removeChild(document.querySelector(".fourth"));
+news.remove();
+
+
+
+
+

@@ -352,3 +352,107 @@ console.log(`Sum is ${sum}`);
 
 
 //map()
+let numbers=[1,2,3,4,5];
+let double = numbers.map(num=>num*2);
+console.log(double);
+
+
+let peoples1=[
+    {firstName:"Macom",lastName:"ggfbe"},
+    {firstName:"Sree",lastName:"Mathi"},
+    {firstName:"Kavitha",lastName:"Murugan"}
+]
+
+const results=peoples1.map(people=>{
+    return [people.firstName,people.lastName]
+});
+
+results.forEach(p=>console.log(p))
+
+
+let randomNumbers=[3,6,7,19];
+const num=randomNumbers.map(n=>n*10);
+console.log(num);
+
+//filter method
+
+const songs=[
+    {name:"Lucky you",duration:4.34},
+    {name:"Just like you",duration:3.23},
+    {name:"The search",duration:2.33},
+    {name:"Old Town Road",duration:1.43},
+    {
+        name:"The BOx",duration :5.23
+    }
+];
+
+console.log(songs.filter(song=>song.duration>3));
+
+//assignment
+const age=[32,33,16,40];
+console.log(age.filter((age)=>age>18));
+
+const words=[
+    "spray",
+    "limit",
+    "elite",
+    "exuberant",
+    "destruction",
+    "present",
+];
+
+console.log(words.filter((word)=>word.length>6));
+
+console.log(words.find((word)=>word.length>6));
+
+console.log(age.find((age)=>age>18));
+
+const products=[
+    {name:"checkers",category:"toys"},
+    {name:"harry potter",category:"books"},
+    {name:"iphone",category:"electronics"},
+    {name:"Learn php",category:"books"}
+];
+
+console.log(products.every(p=>p.category!=="books"));
+console.log(products.some(p=>p.category!=="books"));
+
+console.log(products.find(p=>p.category==="books"));
+
+const namess=['huxn','jordan','alex'];
+console.log(namess.every(n=>n.length<=4));
+console.log(namess.some(n=>n.length<=4));
+
+//Reduce()
+
+const numbes=[1,2,3,4,5];
+const sum1=numbes.reduce((p,c)=>{return p+c},0);
+console.log(sum1);
+
+const p2=[
+    {
+        name:"Huxn WebDev",
+        age:19,
+    },
+    {
+        name:"Alex Mead",
+        age:29,
+    },
+    {
+        name:"Brain Griffin",
+        age:40
+    }
+];
+
+const ag=p2.reduce((p,c)=>
+   ( c.age>p?c.age:p),0
+);
+
+console.log(ag);
+
+
+//assignment
+
+const nums=[2,3,4,5];
+const values=nums.reduce((p,c)=>{return p*c},1)
+console.log(values);

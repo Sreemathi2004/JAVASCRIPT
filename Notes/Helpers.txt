@@ -3,3 +3,169 @@ Map Helper:-
 
 the map() method creates a new array populate with the results of calling a provided function on every element in the calling array.
 
+difference between map method and foreach method
+    => but map doesn't modify the existing array instead of it gives new array
+
+let numbers=[1,2,3,4,5];
+let double = numbers.map(num=>num*2);
+console.log(double);
+
+---------------
+let peoples1=[
+    {firstName:"Macom",lastName:"ggfbe"},
+    {firstName:"Sree",lastName:"Mathi"},
+    {firstName:"Kavitha",lastName:"Murugan"}
+]
+
+const results=peoples1.map(people=>{
+    return [people.firstName,people.lastName]
+});
+
+results.forEach(p=>console.log(p))
+-------------------
+
+let randomNumbers=[3,6,7,19];
+const num=randomNumbers.map(n=>n*10);
+console.log(num);
+
+-------------------
+
+        FILTER method
+
+the filter method is a built in array method in javascript that allows you to create a new array containing elements that pass a certain condition 
+
+it provides a clean and concise way to filter out elements from an array based on a specififed criteria
+
+const songs=[
+    {name:"Lucky you",duration:4.34},
+    {name:"Just like you",duration:3.23},
+    {name:"The search",duration:2.33},
+    {name:"Old Town Road",duration:1.43},
+    {
+        name:"The BOx",duration :5.23
+    }
+];
+
+console.log(songs.filter(song=>song.duration>3));
+
+-------------
+//assignment
+const age=[32,33,16,40];
+console.log(age.filter((age)=>age>18));
+------------
+const words=[
+    "spray",
+    "limit",
+    "elite",
+    "exuberant",
+    "destruction",
+    "present",
+];
+
+console.log(words.filter((word)=>word.length>6));
+--------------
+
+        FIND method
+
+the find() method is another built-in array helper in js that allows you to fnd the first element in an array that matches a specific condition 
+
+it returns the value of the first element that satisfies the given testing function or undefined if no element is found.
+
+console.log(words.find((word)=>word.length>6));
+
+console.log(age.find((age)=>age>18));
+
+const products=[
+    {name:"checkers",category:"toys"},
+    {name:"harry potter",category:"books"},
+    {name:"iphone",category:"electronics"},
+    {name:"Learn php",category:"books"}
+];
+
+console.log(products.find(p=>p.category==="books"));
+
+-----------------
+
+            EVERY AND SOME
+the every() and some() are two built-in array methods in js that allows you to check the elements of an array based on a given condition.
+
+Both methods take a callback function as an argument which is applied to each element of the array.
+
+The every() method tests whether all elements in the array pass the condition specififed by the provided callback function.
+
+It returns true if the callback function returns true for every element and false if any element fails the condition.
+
+The some() method tests whether at least one element in the array passes the condition specififed by the provided callback function.
+
+it returns true if the callback returns true for at least one element and false if no element passes the condition
+
+const namess=['huxn','jordan','alex'];
+console.log(namess.every(n=>n.length<=4));
+console.log(namess.some(n=>n.length<=4));
+------------------------------------
+const products=[
+    {name:"checkers",category:"toys"},
+    {name:"harry potter",category:"books"},
+    {name:"iphone",category:"electronics"},
+    {name:"Learn php",category:"books"}
+];
+
+console.log(products.every(p=>p.category!=="books"));
+console.log(products.some(p=>p.category!=="books"));
+-----------------------------------
+
+        REDUCE method
+
+reduce() method applied the reducer function to each eleemt of an array .accumulating the results into a single value.
+
+it is often used to perfoem calculations or aggregations on array elements and simplify the array into a 'single value'.
+
+const numbes=[1,2,3,4,5];
+const sum1=numbes.reduce((p,c)=>{return p+c},0);
+console.log(sum1);
+
+output :-
+
+    p=0,c=1
+    p=p+c=1
+
+    p=1,c=2
+    p=p+c=3
+
+    p=3,c=3
+    p=p+c=6
+
+    p=6,c=4
+    p=p+c=10
+
+    p=10,c=5
+    p=p+c=15
+
+    return 15
+
+-------------------
+
+const p2=[
+    {
+        name:"Huxn WebDev",
+        age:19,
+    },
+    {
+        name:"Alex Mead",
+        age:29,
+    },
+    {
+        name:"Brain Griffin",
+        age:40
+    }
+];
+
+const ag=p2.reduce((p,c)=>
+   ( c.age>p?c.age:p),0
+);
+
+console.log(ag);
+
+-----------------
+
+
