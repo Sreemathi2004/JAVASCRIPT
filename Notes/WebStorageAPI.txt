@@ -3,15 +3,35 @@ The web storage api provides mechanisms by which browsers can store keyValues pa
 
 2 mechanisms with web storage 
 
-i)sessionStorage
+i)sessionStorage --> 5MB
 ----------------
-        Maintains a separate storage aresa for each given origin that's available for the duration of the page session (as long as the browser is open, including page reloads and restores)
+        Maintains a separate storage area for each given origin that's available for the duration of the page session (as long as the browser is open, including page reloads and restores)
 
+        browser
+        5MB maximum storage
+        window closes --> data deletes
+        temporary data
         
 ii)Local storage
 ----------------
 
         localStorage does the same thing, but persists even when the browser is closed and reopened.
+
+        browser
+        10MB maximum storage
+        window closes --> data won't deletes
+        data persists
+
+iii) cookies
+----------------
+
+        browser
+        4kb storage
+        window closes -> data won't deletes
+        send with request --> server
+
+        used for tracking and session management
+
 
 
 These mechanisms are available via the Window.sessionStorage and Window.localStorage properties. Invoking one of these will return an instance of a Storage object, through which data items can be set, retrieved and removed. A different storage object is used for the sessionStorage and localStorage for each origin — they function and are controlled separately.
@@ -48,4 +68,50 @@ console.log(name);//Sreemathi
 
 
 //---------------------
+const object={
+    name:"Sreemathi",
+};
 
+
+sessionStorage.setItem("age",20);
+
+const name=sessionStorage.removeItem("name",object.name);
+console.log(name);
+
+//---------------------
+
+
+//**************LOCAL STORAGE***************
+
+const obj={
+    name:"SreeVishnu",
+    age:20,
+    gender:"female"
+};
+
+localStorage.setItem("age",obj.age);
+localStorage.setItem("gender",obj.gender);
+localStorage.setItem("name",obj.name);
+
+// sessionStorage.setItem("name",obj.name);
+// sessionStorage.setItem("age",obj.age);
+// sessionStorage.setItem("gender",obj.gender);
+
+console.log(sessionStorage.getItem("name"));
+
+console.log(localStorage.getItem("name"));
+
+
+//********COOKIE**************
+
+document.cookie="name=somename";
+console.log(document.cookie);
+
+//cookie expires
+
+//expires
+
+const expire=new Date(2024,6,2).toUTCString();
+console.log(expire);
+
+document.cookie="name=someName; expires="+expire;
