@@ -1,0 +1,51 @@
+The web storage api provides mechanisms by which browsers can store keyValues pairs , in a much more intutive fashion than using cookies
+
+
+2 mechanisms with web storage 
+
+i)sessionStorage
+----------------
+        Maintains a separate storage aresa for each given origin that's available for the duration of the page session (as long as the browser is open, including page reloads and restores)
+
+        
+ii)Local storage
+----------------
+
+        localStorage does the same thing, but persists even when the browser is closed and reopened.
+
+
+These mechanisms are available via the Window.sessionStorage and Window.localStorage properties. Invoking one of these will return an instance of a Storage object, through which data items can be set, retrieved and removed. A different storage object is used for the sessionStorage and localStorage for each origin — they function and are controlled separately.
+
+
+Both sessionStorage and localStorage in Web Storage are synchronous in nature. This means that when data is set, retrieved, or removed from these storage mechanisms, the operations are performed synchronously, blocking the execution of other JavaScript code until the operation is completed. This synchronous behavior can potentially affect the performance of the web application, especially if there is a large amount of data being stored or retrieved.
+
+Both sessionStorage and localStorage in Web Storage are synchronous in nature. This means that when data is set, retrieved, or removed from these storage mechanisms, the operations are performed synchronously, blocking the execution of other JavaScript code until the operation is completed. This synchronous behavior can potentially affect the performance of the web application, especially if there is a large amount of data being stored or retrieved.
+
+
+const object={
+    name:"Sreemathi",
+};
+
+sessionStorage.setItem("name",object.name);
+sessionStorage.setItem("age",20);
+
+const age=sessionStorage.getItem("age");
+console.log(age);
+
+
+
+//-------------------
+
+const object={
+    name:"Sreemathi",
+};
+
+
+sessionStorage.setItem("age",20);
+
+const name=sessionStorage.getItem("name");
+console.log(name);//Sreemathi
+
+
+//---------------------
+
