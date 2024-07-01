@@ -1,0 +1,89 @@
+//Reference error
+
+to avoid reference error we use the datatype
+
+use "use strict"
+
+//-----------
+
+
+//Syntax Error
+
+Object..create();//synatx Error
+
+
+//----------TYPE Error
+
+"use strict";
+
+const variable="Sree";
+console.log(variable);
+variable="vishnu";
+
+output:-
+-----------
+Uncaught TypeError: Assignment to constant variable.
+    at script.js:7:9
+
+
+//-----------try and catch
+
+//Errors and Error Handling
+
+"use strict"
+const makeError=()=>{
+    try{
+        const name="sree";
+        name="vishnu";
+
+    }
+    catch(err){
+            console.error(`Error is ${err}`);
+    }
+}
+makeError();
+
+//  output:
+// Error is TypeError: Assignment to constant variable.
+
+
+//*************
+
+"use strict"
+const makeError=()=>{
+    try{
+        const name="sree";
+       name="s";
+    }
+    catch(err){
+            
+           console.error(err.stack);
+    }
+}
+makeError();
+
+//************* CUSTOM Error
+
+
+
+"use strict"
+const makeError=()=>{
+    try{
+       throw new Error("This is a custom Error");
+    }
+    catch(err){
+            
+           console.error(err.stack);
+    }
+}
+makeError();
+
+
+//********************
+
+ console.error(err.message);
+
+ //***********FINALLY********
+
+ 
+
