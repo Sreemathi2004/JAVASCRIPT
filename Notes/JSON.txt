@@ -1,0 +1,5 @@
+JSON -> javascript Object Notation
+
+text format
+
+to send and receive data in many programming languages

@@ -1,0 +1,52 @@
+OOP is a programming language model/style organized around objects rather then "actions"
+and data rather then logic
+
+Javascript is a versatile and dynmaic programming language that supports multiple paradigms,including procedural,functional and oops.While js is not a purely oo language like java and c++, it provides the tools and features to implement oop concepts effectively.
+
+OOP in js refers to the practice of designing and struturing code objects and their interactions.
+
+It is a programming paradigms that allows developers to model real- world entities and their relationships using objects and classes.
+
+//--------------------------KEYWORD-------------------------
+
+the Javascript this KEYWORD refers to the object it belongs to . it has different values depending on where it is used 
+
+In a method ---> this refers to the owner object.
+
+Alone       ---> this refers to the global object.
+
+In a function ---> this refers to the global object.
+
+
+console.log(this);//it gives window object
+console.log(this===window); true 
+
+window.firstName="sree";
+this.lastName="mathi";
+
+
+---------------------------------------
+const obj={
+    firstName : "Huxn",
+    lastName  : "WebDev",
+    fullName : function(){
+        //return this; //owner obj
+
+        return `${this.firstName} ${this.lastName}`
+    }
+};
+console.log(obj.fullName());
+
+
+if we use ()=> {} arrow function there this direclty refers to windows object it doesnt refer current object
+
+
+const obj={
+    firstName : "Huxn",
+    lastName  : "WebDev",
+    fullName : ()=>return `${this.firstName} ${this.lastName}`
+    
+};
+console.log(obj.fullName());
+------------------------------------------
+

@@ -1,0 +1,240 @@
+class Pizza{
+    constructor(){
+        this.size="medium";
+        this.crust="original";
+    }
+    bake(){
+         console.log(`Baking a ${this.size} ${this.crust} crust pizza`);
+    }
+}
+const anotherPizza =new Pizza();
+console.log(anotherPizza.size);
+console.log(anotherPizza.crust);
+console.log(anotherPizza.bake());
+
+//-------------------
+
+class Pizza{
+    constructor(typePizza,size,crust){
+        this.typePizza=typePizza;
+        this.size=size;
+        this.crust=crust;
+    }
+    bake(){
+         console.log(`Baking a ${this.size} ${this.crust}  ${this.typePizza} crust pizza`);
+    }
+}
+const anotherPizza =new Pizza("margartia","small","original");
+console.log(anotherPizza.typePizza);
+console.log(anotherPizza.size);
+console.log(anotherPizza.crust);
+console.log(anotherPizza.bake());
+
+
+const anotherPizza1=new Pizza("margaaa","large","normal");
+
+console.log(anotherPizza1.typePizza);
+console.log(anotherPizza1.size);
+console.log(anotherPizza1.crust);
+console.log(anotherPizza1.bake());
+
+//-----------------------
+
+get and set
+
+class Pizza{
+    constructor(typePizza,size,crust,toppingpizza){
+        this.typePizza=typePizza;
+        this.size=size;
+        this.crust=crust;
+        this.toppingpizza=toppingpizza;
+    }
+    get toppingPizza(){
+        return this.toppingpizza;
+    }
+    set toppingPizza(toppingpizza){
+        this.toppingpizza=toppingpizza;
+    }
+    bake(){
+         console.log(`Baking a ${this.size} ${this.crust}  ${this.typePizza} crust pizza`);
+    }
+}
+const anotherPizza =new Pizza("margartia","small","original");
+console.log(anotherPizza.typePizza);
+console.log(anotherPizza.size);
+console.log(anotherPizza.crust);
+console.log(anotherPizza.bake());
+anotherPizza.toppingPizza="cream";
+console.log(anotherPizza.toppingpizza);
+
+//-----------------------------
+
+class Pizza{
+    constructor(typePizza,size,crust,toppingpizza){
+        this.typePizza=typePizza;
+        this.size=size;
+        this.crust=crust;
+        this.toppingpizza=toppingpizza;
+    }
+    gettoppingPizza(){
+        return this.toppingpizza;
+    }
+    settoppingPizza(toppingpizza){
+        this.toppingpizza=toppingpizza;
+    }
+    bake(){
+         console.log(`Baking a ${this.size} ${this.crust}  ${this.typePizza} crust pizza`);
+    }
+}
+const anotherPizza =new Pizza("margartia","small","original");
+console.log(anotherPizza.typePizza);
+console.log(anotherPizza.size);
+console.log(anotherPizza.crust);
+console.log(anotherPizza.bake());
+anotherPizza.settoppingPizza("cream");
+console.log(anotherPizza.toppingpizza);
+
+//--------------------------------
+
+class Pizza{
+    constructor(typePizza,size,crust,toppingpizza){
+        this.typePizza=typePizza;
+        this.size=size;
+        this.crust=crust;
+        this.toppingpizza=[];
+    }
+    gettoppingPizza(){
+        return this.toppingpizza;
+    }
+    settoppingPizza(toppingpizza){
+        this.toppingpizza.push(toppingpizza);
+    }
+    bake(){
+         console.log(`Baking a ${this.size} ${this.crust}  ${this.typePizza} crust pizza`);
+    }
+}
+const anotherPizza =new Pizza("margartia","small","original");
+console.log(anotherPizza.typePizza);
+console.log(anotherPizza.size);
+console.log(anotherPizza.crust);
+console.log(anotherPizza.bake());
+anotherPizza.settoppingPizza("cream");
+console.log(anotherPizza.toppingpizza);
+anotherPizza.settoppingPizza("Lighter");
+anotherPizza.settoppingPizza("Weighter");
+console.log(anotherPizza.toppingpizza);
+
+
+//----------------------------------
+
+class Pizza{
+    constructor(size){
+        
+        this.size=size;
+        this.crust="Original";
+    }
+    getCrust(){
+        return this.crust;
+    }
+    setCrust(crustPizza){
+        this.crust=crustPizza;
+    }
+    
+}
+
+class SpecialPizza extends Pizza{
+    constructor(sizePizza){
+        super(sizePizza);
+        this.type="Margarita";
+    }
+    slice(){
+        console.log(`Log ${this.size} ${this.type} pizza has 8 slices`);
+    }
+}
+
+const myspl=new SpecialPizza("normal");
+myspl.slice();
+
+//-----------------------------------------
+
+  variable :-
+    this._size ==> underscore means private
+
+//-------------FACTORY FUNCTION
+
+function pizzaFactory(sizePizza){
+    const crust="original";
+    const size=sizePizza;
+    return{
+        bake:()=> console.log(`Baking a ${size} ${crust} crust pizza`)
+    };
+}
+
+const myPizza=pizzaFactory("small");
+myPizza.bake();
+console.log(myPizza.crust);//undefined
+
+we cannot access the variable outside the fucntion using dot ..it only applicable for objects in javascript
+
+//-----------------------------------------------
+
+#--> private 
+
+
+class Pizza{
+    crust="Original";
+    #sauce="tomato";
+    constructor(size){
+        this.size=size;
+    }
+    getCrust(){
+        return this.crust;
+    }
+    setCrust(crustPizza){
+        this.crust=crustPizza;
+    }
+    bake(){
+        console.log(`${this.size} ${this.crust} ${this.#sauce}`);
+    }
+    
+}
+
+const myObj=new Pizza("Small");
+myObj.bake();
+console.log(myObj.getcrust());
+console.log(myObj.size);
+
+
+//---------------------------------------------
+
+class Pizza{
+    crust="Original";
+    #sauce="tomato";
+    constructor(size){
+        this.size=size;
+    }
+    getCrust(){
+        return this.crust;
+    }
+    setCrust(crustPizza){
+        this.crust=crustPizza;
+    }
+    getSauce(){
+        return this.#sauce;
+    }
+    setCrust(Sauces){
+        this.#sauce=Sauces;
+    }
+    bake(){
+        console.log(`${this.size} ${this.crust} ${this.#sauce}`);
+    }
+    
+}
+
+const myObj=new Pizza("Small");
+myObj.bake();
+console.log(myObj.getCrust());
+console.log(myObj.size);
+console.log(myObj.getSauce());
+
+
